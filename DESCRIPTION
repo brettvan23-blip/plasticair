@@ -18,3 +18,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/brettvan23-blip/plasticair
+BugReports: https://github.com/brettvan23-blip/plasticair/issues
