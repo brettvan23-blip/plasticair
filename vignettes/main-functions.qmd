@@ -1,0 +1,37 @@
+---
+title: "Main Functions"
+format: html
+---
+
+```{r}
+library(plasticair)
+plastic_data <- load_data()
+```
+
+
+```{r}
+plot_air_vs_plastic(air_vs_plastic_clean, 
+                    remove_outliers = TRUE, 
+                    aqi_filter = "All",
+                    color = TRUE)
+```
+
+This function will create a bubble plot comparing total plastic waste and average AQI across countries. Users can filter countries by AQI category, remove outliers, and color points by AQI classification.
+
+```{r}
+summarize_country_pollution(
+  air_vs_plastic_clean,
+  country = "Philippines"
+)
+```
+This function will summarize total plastic waste, AQI, and volunteer participation for a selected country with the default set as the Philippines and display it in a table format.
+
+```{r}
+animate_feritile_country(
+  fertility,
+  country =  "Philippines",
+  replacement_rate = 2.1
+)
+```
+
+This function will animate fertility rate over time for the Philippines. The x-axis will show year, the y-axis will show fertility rate, and the dashed line will represent the replacement rate of 2.1 births per woman.
