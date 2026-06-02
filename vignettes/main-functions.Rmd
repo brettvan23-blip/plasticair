@@ -1,15 +1,19 @@
 ---
-title: "Main Functions"
-format: html
+title: "main-functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{main-functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r}
+```{r, eval = FALSE}
 library(plasticair)
 plastic_data <- load_data()
 ```
 
 
-```{r}
+```{r, eval = FALSE}
 plot_air_vs_plastic(air_vs_plastic_clean, 
                     remove_outliers = TRUE, 
                     aqi_filter = "All",
@@ -18,7 +22,7 @@ plot_air_vs_plastic(air_vs_plastic_clean,
 
 This function will create a bubble plot comparing total plastic waste and average AQI across countries. Users can filter countries by AQI category, remove outliers, and color points by AQI classification.
 
-```{r}
+```{r, eval = FALSE}
 summarize_country_pollution(
   air_vs_plastic_clean,
   country = "Philippines"
@@ -26,7 +30,7 @@ summarize_country_pollution(
 ```
 This function will summarize total plastic waste, AQI, and volunteer participation for a selected country with the default set as the Philippines and display it in a table format.
 
-```{r}
+```{r, eval = FALSE}
 animate_feritile_country(
   fertility,
   country =  "Philippines",

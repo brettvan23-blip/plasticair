@@ -7,16 +7,24 @@ Authors@R:
     person("Nitya", "Kolli", email = "nityakolli2006@gmail.com", role = "aut"))
 Description: Provides tools for loading, cleaning, analyzing, and visualizing 
     global plastic waste, quality data and fertility rate.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
-Imports: 
-    readr
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://github.com/brettvan23-blip/plasticair
 BugReports: https://github.com/brettvan23-blip/plasticair/issues
+Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    gganimate,
+    ggplot2,
+    ggrepel,
+    gt,
+    readr,
+    tibble
+    
