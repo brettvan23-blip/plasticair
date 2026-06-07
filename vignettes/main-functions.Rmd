@@ -12,30 +12,40 @@ library(plasticair)
 plastic_data <- load_data()
 ```
 
+This function loads the merged plastic waste and air quality dataset from the package.
 
 ```{r, eval = FALSE}
-plot_air_vs_plastic(air_vs_plastic_clean, 
-                    remove_outliers = TRUE, 
-                    aqi_filter = "All",
-                    color = TRUE)
+cleaned <- clean_plastics(plastic_data)
 ```
 
-This function will create a bubble plot comparing total plastic waste and average AQI across countries. Users can filter countries by AQI category, remove outliers, and color points by AQI classification.
+This function removes Grand Total summary rows, standardizes country name casing, and aggregates to one row per country-year.
 
 ```{r, eval = FALSE}
-summarize_country_pollution(
-  air_vs_plastic_clean,
-  country = "Philippines"
-)
+summarize_country_pollution(plastic_data, country_name = "Philippines")
 ```
-This function will summarize total plastic waste, AQI, and volunteer participation for a selected country with the default set as the Philippines and display it in a table format.
+
+This function creates a table showing total plastic waste and average AQI for a selected country. Default is the Philippines.
 
 ```{r, eval = FALSE}
-animate_feritile_country(
-  fertility,
-  country =  "Philippines",
-  replacement_rate = 2.1
-)
+summarize_top_countries(plastic_data, n = 10)
 ```
 
-This function will animate fertility rate over time for the Philippines. The x-axis will show year, the y-axis will show fertility rate, and the dashed line will represent the replacement rate of 2.1 births per woman.
+This function returns a table of the top N countries ranked by total plastic waste.
+
+```{r, eval = FALSE}
+plot_air_vs_plastic(plastic_data)
+```
+
+This function creates a bubble plot comparing total plastic waste and average AQI across countries.
+
+```{r, eval = FALSE}
+animate_fertility_country(plastic_data)
+```
+
+This function creates an animated plot showing fertility rate over time for the Philippines.
+
+```{r, eval = FALSE}
+model <- run_plastic_aqi_lm(plastic_data)
+```
+
+This function fits a linear regression of average AQI on total plastic waste and prints a coefficient table.

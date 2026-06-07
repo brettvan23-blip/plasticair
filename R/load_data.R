@@ -1,14 +1,17 @@
-#' Loads the Break Free From Plastic dataset.
+#' Load the merged plastic waste and air quality dataset
 #'
-#' @return A tibble containing plastic waste data.
+#' Loads the pre-built merged dataset from the package's inst/extdata folder.
+#'
+#' @return A tibble containing country-level plastic waste and AQI data.
 #' @importFrom readr read_csv
 #' @export
 #'
 #' @examples
 #' load_data()
 load_data <- function() {
-  readr::read_csv(
-    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-01-26/plastics.csv"
-  )
+  path <- system.file("extdata", "air_vs_plastic.csv", package = "plasticair")
+  if (path == "") {
+    stop("Data file not found. Try reinstalling the package.", call. = FALSE)
+  }
+  readr::read_csv(path, show_col_types = FALSE)
 }
-

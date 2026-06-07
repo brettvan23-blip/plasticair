@@ -7,8 +7,8 @@
 plot_air_vs_plastic(air_vs_plastic_clean)
 }
 \arguments{
-\item{air_vs_plastic_clean}{A data frame containing country, total_plastic,
-and avg_aqi columns.}
+\item{air_vs_plastic_clean}{A data frame containing \code{country},
+\code{total_plastic}, and \code{avg_aqi} columns.}
 }
 \value{
 A ggplot object showing total plastic waste and average AQI.
@@ -17,4 +17,9 @@ A ggplot object showing total plastic waste and average AQI.
 Creates a bubble plot comparing total plastic waste and average AQI across
 countries. Bubble size represents total plastic waste, and color represents
 AQI category.
+}
+\examples{
+\dontrun{
+  plot_air_vs_plastic(air_vs_plastic_clean)
+}
 }

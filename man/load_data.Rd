@@ -2,15 +2,15 @@
 % Please edit documentation in R/load_data.R
 \name{load_data}
 \alias{load_data}
-\title{Loads the Break Free From Plastic dataset.}
+\title{Load the merged plastic waste and air quality dataset}
 \usage{
 load_data()
 }
 \value{
-A tibble containing plastic waste data.
+A tibble containing country-level plastic waste and AQI data.
 }
 \description{
-Loads the Break Free From Plastic dataset.
+Loads the pre-built merged dataset from the package's inst/extdata folder.
 }
 \examples{
 load_data()
